@@ -1,0 +1,25 @@
+{
+  "name": "OTUS Superpack",
+  "options_page": "options.html",
+  "version" : "0.2",
+  "description" : "Навигация по видео вебинаров платформы OTUS",
+  "background": {
+    "page": "background.html"
+  },
+  "browser_action": {
+    "default_popup": "popup.html",
+    "default_icon": "video-48.png"
+  },
+  "icons": {
+    "48" : "video-48.png",
+    "128" : "video-128.png"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://otus.ru/*"],
+      "js": ["content.bundle.js"]
+    }],
+  "permissions": [ "declarativeContent",  "activeTab", "tabs"],
+  "manifest_version": 2,
+  "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self'"
+}
